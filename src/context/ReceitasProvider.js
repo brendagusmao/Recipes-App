@@ -1,9 +1,29 @@
 import PropTypes from 'prop-types';
-// import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import ReceitasContext from './ReceitasContext';
 
 function ReceitasProvider({ children }) {
-  return <ReceitasContext.Provider>{children}</ReceitasContext.Provider>;
+  const [userEmail, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleEmail = ({ target: { value } }) => {
+    setEmail(value);
+  };
+
+  const handleSenha = ({ target: { value } }) => {
+    setSenha(value);
+  };
+
+  const values = useMemo(() => (
+    { userEmail,
+      senha,
+      handleEmail,
+      handleSenha,
+    }), [userEmail,
+    senha,
+  ]);
+
+  return <ReceitasContext.Provider value={ values }>{children}</ReceitasContext.Provider>;
 }
 
 ReceitasProvider.propTypes = {
