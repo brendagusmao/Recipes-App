@@ -8,6 +8,7 @@ function ReceitasProvider({ children }) {
   const [senha, setSenha] = useState('');
   const [busca, setBusca] = useState('');
   const [radio, setRadio] = useState('');
+  const [receitas, setReceitas] = useState([]);
 
   const handleEmail = ({ target: { value } }) => {
     setEmail(value);
@@ -30,13 +31,16 @@ function ReceitasProvider({ children }) {
       switch (radio) {
       case 'ingrediente':
         await ApiIngrediente(busca, 'themealdb');
+        setReceitas(await ApiIngrediente(busca, 'themealdb'));
         break;
       case 'nome':
         await ApiName(busca, 'themealdb');
+        setReceitas(await ApiName(busca, 'themealdb'));
         break;
       case 'letter':
         if (busca.length === 1) {
           await ApiLetter(busca, 'themealdb');
+          setReceitas(await ApiLetter(busca, 'themealdb'));
         } else {
           global.alert('Your search must have only 1 (one) character');
         }
@@ -48,13 +52,16 @@ function ReceitasProvider({ children }) {
       switch (radio) {
       case 'ingrediente':
         await ApiIngrediente(busca, 'thecocktaildb');
+        setReceitas(await ApiIngrediente(busca, 'thecocktaildb'));
         break;
       case 'nome':
         await ApiName(busca, 'thecocktaildb');
+        setReceitas(await ApiName(busca, 'thecocktaildb'));
         break;
       case 'letter':
         if (busca.length === 1) {
           await ApiLetter(busca, 'thecocktaildb');
+          setReceitas(await ApiLetter(busca, 'thecocktaildb'));
         } else {
           global.alert('Your search must have only 1 (one) character');
         }
@@ -74,8 +81,9 @@ function ReceitasProvider({ children }) {
       handleRadio,
       endPoint,
       handleBusca,
+      receitas,
     }),
-    [userEmail, senha, endPoint],
+    [userEmail, senha, endPoint, receitas],
   );
 
   return (
