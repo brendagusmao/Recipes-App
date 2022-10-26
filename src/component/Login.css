@@ -1,0 +1,155 @@
+.Login {
+  align-items: center;
+  background: url('https://celes.club/uploads/posts/2022-08/1661219513_1-celes-club-p-tekstura-kukhni-instagram-1.jpg');
+  background-position: 20%;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.Login__logo {
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  width: 20rem;
+}
+
+.Login__logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.Login__container {
+  align-items: center;
+  backdrop-filter: blur(4px);
+  background-color: rgba(27, 25, 33, 0.586);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  font-family: PP Neue Montreal , serif;
+  height: 25rem;
+  justify-content: center;
+  position: absolute;
+  transition: 0.7s all ease;
+  width: 20rem;
+}
+
+.Login__form-input {
+  backdrop-filter: blur(0);
+  background-color: rgba(41, 39, 47, 0.861);
+  border: none;
+  caret-color: #498149;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 2.5rem;
+  letter-spacing: 0.5px;
+  margin: 5px;
+  outline: none;
+  padding: 8px 10px;
+  transition: all 0.3s ease 0s;
+  width: 16rem;
+}
+
+.Login__form-input:focus {
+  background-color: #0c111a;
+  border: 1px solid rgb(168, 54, 25);
+  color: white;
+}
+
+.Login__button {
+  background-color: rgb(168, 54, 25);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.286);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  height: 40px;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  outline: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  width: 110px;
+}
+
+.Login__button:hover {
+  background-color: rgb(163, 61, 35);
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.401);
+  color: white;
+}
+
+.Header {
+  background-color: #beb194;
+  border-radius: 30% 20% 0% 80% / 50% 0% 100% 50%;
+  color: white;
+  height: 160px;
+  margin-top: -350px;
+  position: absolute;
+  width: 100%;
+}
+
+.Header img {
+  background-color: #a3977e;
+  border-radius: 45%;
+  margin-left: 85px;
+  margin-top: 10%;
+  padding: 15px;
+  width: 40%;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: PP Neue Montreal , serif;
+  height: 25rem;
+  justify-content: center;
+  margin-top: 50px;
+  position: absolute;
+  transition: 0.7s all ease;
+  width: 20rem;
+}
+
+h4 {
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+@media screen and ( max-width : 600px ) {
+
+  .Login__container {
+    border-radius: 30% 30% 0% 0% / 10% 0% 0% 0%;
+    height: 80vh;
+    margin-bottom: 1px;
+    overflow: hidden;
+    width: 90vw;
+  }
+
+  .Login__container:hover {
+    transform: none;
+  }
+
+  .Login__form-input {
+    backdrop-filter: none;
+  }
+
+  .Header img {
+    background-color: #a3977e;
+    border-radius: 40%;
+    margin-left: 105px;
+    margin-top: 10%;
+    padding: 15px;
+    width: 35%;
+  }
+}
