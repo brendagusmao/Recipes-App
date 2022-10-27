@@ -1,9 +1,13 @@
 import React from 'react';
+import Footer from '../component/Footer';
 import Header from '../component/Header';
 
 function Profile() {
   return (
-    <Header title="Profile" />
+    <div>
+      <Header title="Profile" />
+      <Footer />
+    </div>
   );
 }
 
