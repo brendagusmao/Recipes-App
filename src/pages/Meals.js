@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Header from '../component/Header';
 import ReceitasContext from '../context/ReceitasContext';
 import Card from '../component/Card';
+import Footer from '../component/Footer';
 
 function Meals() {
   const { receitas } = useContext(ReceitasContext);
@@ -24,6 +25,7 @@ function Meals() {
             nameTest={ `${id}-card-name` }
           />
         ))}
+      <Footer />
     </div>
   );
 }
