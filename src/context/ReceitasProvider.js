@@ -70,7 +70,10 @@ function ReceitasProvider({ children }) {
         break;
       }
     }
-  }, [busca, radio]);
+    if (receitas.length === 0) {
+      global.alert('Sorry, we haven\'t found any recipes for these filters.');
+    }
+  }, [busca, radio, receitas]);
 
   const values = useMemo(
     () => ({
