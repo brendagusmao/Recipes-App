@@ -4,6 +4,7 @@ import Header from '../component/Header';
 import ReceitasContext from '../context/ReceitasContext';
 import Card from '../component/Card';
 import Footer from '../component/Footer';
+import Recipes from './Recipes';
 
 function Drinks() {
   const route = useHistory();
@@ -11,20 +12,23 @@ function Drinks() {
 
   return (
     <div>
-      <Header
-        title="Drinks"
-      />
-      {receitas && receitas.length === 1 ? route.push(`/drinks/${receitas[0].idDrink}`)
-        : receitas && receitas.slice(0, +'12').map((recipes, id) => (
-          <Card
-            key={ id }
-            name={ recipes.strDrink }
-            dataTest={ `${id}-recipe-card` }
-            imgTest={ `${id}-card-img` }
-            imagem={ recipes.strDrinkThumb }
-            nameTest={ `${id}-card-name` }
-          />
-        ))}
+      <Header title="Drinks" />
+      {receitas && receitas.length === 1
+        ? route.push(`/drinks/${receitas[0].idDrink}`)
+        : receitas
+          && receitas
+            .slice(0, +'12')
+            .map((recipes, id) => (
+              <Card
+                key={ id }
+                name={ recipes.strDrink }
+                dataTest={ `${id}-recipe-card` }
+                imgTest={ `${id}-card-img` }
+                imagem={ recipes.strDrinkThumb }
+                nameTest={ `${id}-card-name` }
+              />
+            ))}
+      <Recipes />
       <Footer />
     </div>
   );
