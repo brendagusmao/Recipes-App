@@ -47,16 +47,13 @@ function ReceitasProvider({ children }) {
     if (window.location.pathname.includes('meals')) {
       switch (radio) {
       case 'ingrediente':
-
         setReceitas(await ApiIngrediente(busca, 'themealdb'));
         break;
       case 'nome':
-
         setReceitas(await ApiName(busca, 'themealdb'));
         break;
       case 'letter':
         if (busca.length === 1) {
- 
           setReceitas(await ApiLetter(busca, 'themealdb'));
         } else {
           global.alert('Your search must have only 1 (one) character');
@@ -68,16 +65,13 @@ function ReceitasProvider({ children }) {
     } else if (window.location.pathname.includes('drinks')) {
       switch (radio) {
       case 'ingrediente':
-        // await ApiIngrediente(busca, 'thecocktaildb');
         setReceitas(await ApiIngrediente(busca, 'thecocktaildb'));
         break;
       case 'nome':
- 
         setReceitas(await ApiName(busca, 'thecocktaildb'));
         break;
       case 'letter':
         if (busca.length === 1) {
-         
           setReceitas(await ApiLetter(busca, 'thecocktaildb'));
         } else {
           global.alert('Your search must have only 1 (one) character');
@@ -87,7 +81,6 @@ function ReceitasProvider({ children }) {
         break;
       }
     }
-   
     console.log(receitas);
   }, [busca, radio, receitas]);
 

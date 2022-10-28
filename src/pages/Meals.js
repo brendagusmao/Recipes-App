@@ -9,7 +9,7 @@ import Recipes from './Recipes';
 function Meals() {
   const { receitas } = useContext(ReceitasContext);
   const route = useHistory();
-console.log(receitas)
+  console.log(receitas);
   return (
     <div>
       <Header title="Meals" />
