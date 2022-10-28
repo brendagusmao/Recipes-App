@@ -8,6 +8,7 @@ import Recipes from './Recipes';
 
 function Drinks() {
   const route = useHistory();
+  const path = window.location.pathname;
   const { receitas } = useContext(ReceitasContext);
 
   return (
@@ -21,6 +22,12 @@ function Drinks() {
             .map((recipes, id) => (
               <Card
                 key={ id }
+                onClick={ path === '/meals'
+                  ? () => route.push(`/meals/${recipes.idMeal}`)
+                  : () => route.push(`/drinks/${recipes.idDrink}`) }
+                onKeyDown={ path === '/meals'
+                  ? () => route.push(`/meals/${recipes.idMeal}`)
+                  : () => route.push(`/drinks/${recipes.idDrink}`) }
                 name={ recipes.strDrink }
                 dataTest={ `${id}-recipe-card` }
                 imgTest={ `${id}-card-img` }
