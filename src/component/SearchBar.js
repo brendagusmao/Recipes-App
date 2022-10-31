@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import ReceitasContext from '../context/ReceitasContext';
+import '../CSS/SearchBar.css';
 
 function Recipes() {
   const { handleRadio, endPoint, busca, handleBusca } = useContext(ReceitasContext);
   return (
-    <>
+    <div className="sectionbar">
       <label htmlFor="busca">
         Pesquise:
         <input
@@ -14,6 +15,7 @@ function Recipes() {
           data-testid="search-input"
           id="busca"
           onChange={ handleBusca }
+          className="inputlabel"
         />
       </label>
       <label htmlFor="ingrediente">
@@ -25,6 +27,7 @@ function Recipes() {
           value="ingrediente"
           data-testid="ingredient-search-radio"
           onChange={ handleRadio }
+          className="inputradio"
         />
       </label>
       <label htmlFor="nome">
@@ -36,6 +39,7 @@ function Recipes() {
           value="nome"
           data-testid="name-search-radio"
           onChange={ handleRadio }
+          className="inputradio"
         />
       </label>
       <label htmlFor="letter">
@@ -47,16 +51,18 @@ function Recipes() {
           value="letter"
           data-testid="first-letter-search-radio"
           onChange={ handleRadio }
+          className="inputradio"
         />
       </label>
       <button
         type="button"
         data-testid="exec-search-btn"
         onClick={ endPoint }
+        className="buttonss"
       >
         Pesquisar
       </button>
-    </>
+    </div>
   );
 }
 

@@ -32,6 +32,7 @@ function Meals() {
                 imgTest={ `${id}-card-img` }
                 imagem={ recipes.strMealThumb }
                 nameTest={ `${id}-card-name` }
+                className="main"
               />
             ))}
       { renderiza ? <Recipes /> : null }

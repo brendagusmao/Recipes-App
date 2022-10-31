@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import ReceitasContext from '../context/ReceitasContext';
-import './Login.css';
+import '../CSS/Login.css';
 import Logo from '../images/logo.png';
 
 function Login() {
