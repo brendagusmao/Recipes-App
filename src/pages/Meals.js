@@ -7,9 +7,9 @@ import Footer from '../component/Footer';
 import Recipes from './Recipes';
 
 function Meals() {
-  const { receitas } = useContext(ReceitasContext);
+  const { receitas, renderiza } = useContext(ReceitasContext);
+  const path = window.location.pathname;
   const route = useHistory();
-  console.log(receitas);
   return (
     <div>
       <Header title="Meals" />
@@ -21,6 +21,12 @@ function Meals() {
             .map((recipes, id) => (
               <Card
                 key={ id }
+                onClick={ path === '/meals'
+                  ? () => route.push(`/meals/${recipes.idMeal}`)
+                  : () => route.push(`/drinks/${recipes.idDrink}`) }
+                onKeyDown={ path === '/meals'
+                  ? () => route.push(`/meals/${recipes.idMeal}`)
+                  : () => route.push(`/drinks/${recipes.idDrink}`) }
                 name={ recipes.strMeal }
                 dataTest={ `${id}-recipe-card` }
                 imgTest={ `${id}-card-img` }
@@ -28,7 +34,7 @@ function Meals() {
                 nameTest={ `${id}-card-name` }
               />
             ))}
-      <Recipes />
+      { renderiza ? <Recipes /> : null }
       <Footer />
     </div>
   );

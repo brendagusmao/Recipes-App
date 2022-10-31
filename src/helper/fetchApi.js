@@ -49,3 +49,35 @@ export const apiDrink = async () => {
   const data = await response.json();
   return data.drinks;
 };
+
+export const apiCatMeal = async () => {
+  const response = await fetch(
+    'https://www.themealdb.com/api/json/v1/1/list.php?c=list',
+  );
+  const data = await response.json();
+  return data.meals;
+};
+
+export const apiCatDrink = async () => {
+  const response = await fetch(
+    'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list',
+  );
+  const data = await response.json();
+  return data.drinks;
+};
+
+export const apiDrinkFiltro = async (evento) => {
+  const response = await fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${evento}`,
+  );
+  const data = await response.json();
+  return data.drinks;
+};
+
+export const apiMealFiltro = async (evento) => {
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${evento}`,
+  );
+  const data = await response.json();
+  return data.meals;
+};
