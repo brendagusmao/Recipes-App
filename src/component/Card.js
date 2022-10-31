@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../CSS/Card.css';
 
 function Card(props) {
   const { name, dataTest, imagem, imgTest, nameTest, onClick, onKeyDown } = props;
@@ -11,8 +12,9 @@ function Card(props) {
       role="button"
       onKeyDown={ onKeyDown }
       tabIndex={ 0 }
+      className="card"
     >
-      <p data-testid={ nameTest }>{ name }</p>
+      <p data-testid={ nameTest } className="cardtitle">{ name }</p>
       <img src={ imagem } alt={ name } data-testid={ imgTest } />
     </div>
   );

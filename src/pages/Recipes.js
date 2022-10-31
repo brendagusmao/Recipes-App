@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Card from '../component/Card';
 import ReceitasContext from '../context/ReceitasContext';
+import '../CSS/Card.css';
 
 function Recipes() {
   const path = window.location.pathname;
@@ -18,8 +19,9 @@ function Recipes() {
   } = useContext(ReceitasContext);
 
   return (
-    <div>
-      {window.location.pathname.includes('meals')
+    <div className="main">
+      <div className="menu">
+        {window.location.pathname.includes('meals')
       && mealCategory.map((element, index) => (
         <button
           data-testid={ `${element.strCategory}-category-filter` }
@@ -31,7 +33,7 @@ function Recipes() {
           { element.strCategory }
         </button>
       ))}
-      {window.location.pathname.includes('drinks')
+        {window.location.pathname.includes('drinks')
       && drinkCategory.map((element, i) => (
         <button
           data-testid={ `${element.strCategory}-category-filter` }
@@ -43,13 +45,14 @@ function Recipes() {
           { element.strCategory }
         </button>
       ))}
-      <button
-        type="button"
-        onClick={ deleteAll }
-        data-testid="All-category-filter"
-      >
-        All
-      </button>
+        <button
+          type="button"
+          onClick={ deleteAll }
+          data-testid="All-category-filter"
+        >
+          All
+        </button>
+      </div>
       {filtro && filtro.map((element, index) => (
         <Card
           key={ index }

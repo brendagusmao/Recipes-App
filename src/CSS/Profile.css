@@ -1,0 +1,19 @@
+.main {
+  background-color: #111722;
+  color: white;
+  font-family: PP Neue Montreal , serif;
+  letter-spacing: 1px;
+}
+
+a {
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+.buttomlogo {
+  background-color: black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 15px;
+}
