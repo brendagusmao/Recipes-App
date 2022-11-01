@@ -81,3 +81,19 @@ export const apiMealFiltro = async (evento) => {
   const data = await response.json();
   return data.meals;
 };
+
+export const apiMealId = async (receita) => {
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${receita};`,
+  );
+  const data = await response.json();
+  return data.meals;
+};
+
+export const apiDrinkId = async (receita) => {
+  const response = await fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${receita}`,
+  );
+  const data = await response.json();
+  return data.drinks;
+};
