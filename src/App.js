@@ -5,12 +5,13 @@ import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Provider from './context/ReceitasProvider';
 import Login from './component/Login';
-import Recipes from './pages/Recipes';
 import Meals from './pages/Meals';
 import Drinks from './pages/Drinks';
 import DoneRecipes from './pages/DoneRecipes';
 import FavoriteRecipes from './pages/FavoriteRecipes';
 import Profile from './pages/Profile';
+import RecipeDetails from './pages/RecipeDetails';
+import InProgress from './pages/InProgress';
 
 function App() {
   return (
@@ -25,23 +26,23 @@ function App() {
         />
         <Route
           exact
-          path="/meals/:id-da-receita"
-          render={ (props) => <Recipes { ...props } /> }
+          path="/meals/:id"
+          render={ (props) => <RecipeDetails { ...props } /> }
         />
         <Route
           exact
-          path="/drinks/:id-da-receita"
-          render={ (props) => <Recipes { ...props } /> }
+          path="/drinks/:id"
+          render={ (props) => <RecipeDetails { ...props } /> }
         />
         <Route
           exact
-          path="/meals/:id-da-receita/in-progress"
-          render={ (props) => <Recipes { ...props } /> }
+          path="/meals/:id/in-progress"
+          render={ (props) => <InProgress { ...props } /> }
         />
         <Route
           exact
-          path="/drinks/:id-da-receita/in-progress"
-          render={ (props) => <Recipes { ...props } /> }
+          path="/drinks/:id/in-progress"
+          render={ (props) => <InProgress { ...props } /> }
         />
         <Route
           exact
