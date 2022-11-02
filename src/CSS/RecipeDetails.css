@@ -8,8 +8,8 @@
 
 .recomendation-card {
   background-color: none;
-  border-radius: 5px;  color: white;
-
+  border-radius: 5px;
+  color: white;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -21,11 +21,11 @@
   top: 0;
 }
 
-  /* brenda eu comentei pq não passava no cy quando for mexer nisso
+/* brenda eu comentei pq não passava no cy quando for mexer nisso
   passa no cy e veja se passa na questao 28 pois eh la que fica o css do cy */
 
-  /* .inicialbutton {
-    position: fixed;
-    width: 0px;
-    bottom: 0px
-  } */
+/* .inicialbutton {
+  position: fixed;
+  width: 0px;
+  bottom: 0px
+} */
