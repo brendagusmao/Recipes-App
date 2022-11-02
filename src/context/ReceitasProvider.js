@@ -28,10 +28,29 @@ function ReceitasProvider({ children }) {
   const [mealInitial, setMealIniti] = useState([]);
   const [drinkIitial, setDrinkIniti] = useState([]);
   const [click, setCLick] = useState('');
+  const [done, setDone] = useState([]);
+  const [continua, setContinua] = useState([]);
+  const [favorite, setFavorite] = useState([]);
+  const [usado, setUsado] = useState([]);
 
   const handleEmail = ({ target: { value } }) => {
     setEmail(value);
   };
+
+  const handleCheckbox = useCallback(({ target }, selecionado) => {
+    if (target.checked) {
+      target.parentNode.style.textDecoration = 'line-through solid rgb(0, 0, 0)';
+    } else {
+      target.parentNode.style.textDecoration = '';
+    }
+
+    let newUsado = usado
+      ?.filter((e) => e !== selecionado);
+    if (newUsado?.length === usado?.length) {
+      newUsado = [...usado, selecionado];
+    }
+    setUsado([...newUsado]);
+  }, [usado]);
 
   const handleBusca = ({ target: { value } }) => {
     setBusca(value);
@@ -49,6 +68,27 @@ function ReceitasProvider({ children }) {
     localStorage.clear();
     history.push('/');
   }, [history]);
+
+  useEffect(() => {
+    const doneRecipe = JSON.parse(localStorage.getItem('doneRecipes'));
+    if (!doneRecipe) {
+      localStorage.setItem('doneRecipes', JSON.stringify(done));
+    } else {
+      setDone(doneRecipe);
+    }
+    const continueRecipe = JSON.parse(localStorage.getItem('inProgressRecipes'));
+    if (!continueRecipe) {
+      localStorage.setItem('inProgressRecipes', JSON.stringify(continua));
+    } else {
+      setContinua(continueRecipe);
+    }
+    const favoriteRecipe = JSON.parse(localStorage.getItem('favoriteRecipes'));
+    if (!favoriteRecipe) {
+      localStorage.setItem('favoriteRecipes', JSON.stringify(favorite));
+    } else {
+      setFavorite(favoriteRecipe);
+    }
+  }, []);
 
   const endPoint = useCallback(async () => {
     if (receitas?.length === 0) {
@@ -168,6 +208,12 @@ function ReceitasProvider({ children }) {
       drinkClick,
       filtro,
       deleteAll,
+      done,
+      continua,
+      favorite,
+      setFavorite,
+      handleCheckbox,
+      usado,
     }),
     [userEmail,
       senha,
@@ -182,7 +228,12 @@ function ReceitasProvider({ children }) {
       filtro,
       deleteAll,
       mealClick,
-      drinkClick],
+      drinkClick,
+      done,
+      continua,
+      favorite,
+      usado,
+      handleCheckbox],
   );
 
   return (

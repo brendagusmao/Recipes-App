@@ -84,7 +84,7 @@ export const apiMealFiltro = async (evento) => {
 
 export const apiMealId = async (receita) => {
   const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${receita};`,
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${receita}`,
   );
   const data = await response.json();
   return data.meals;
