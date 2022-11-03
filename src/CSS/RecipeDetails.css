@@ -70,12 +70,12 @@
 
 .cardDetailsTitle {
   align-items: center;
+  color: white;
   display: flex;
   flex-flow: row;
   font-family: PP Neue Montreal , serif;
   font-size: 18px;
   font-weight: 700;
-  color: white;
   justify-content: center;
   letter-spacing: 1px;
   padding: 15px;
