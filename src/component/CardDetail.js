@@ -63,7 +63,7 @@ function CardDetail() {
       {type === 'meals' ? (
         <h3 data-testid="recipe-category" className="tag">{receita.strCategory}</h3>
       ) : (
-        <h1 data-testid="recipe-category">{receita.strAlcoholic}</h1>
+        <h1 data-testid="recipe-category" className="tag">{receita.strAlcoholic}</h1>
       )}
       <p data-testid="instructions" className="description">{receita.strInstructions}</p>
       {pathname.includes('in-progress') ? (
