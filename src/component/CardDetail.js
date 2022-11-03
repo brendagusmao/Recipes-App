@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import ReceitasContext from '../context/ReceitasContext';
 import { apiDrinkId, apiMealId } from '../helper/fetchApi';
+import Marker from '../images/label.svg';
 
 function CardDetail() {
   const [receita, setReceita] = useState({});
@@ -46,29 +47,38 @@ function CardDetail() {
   };
 
   return (
-    <>
+    <div className="cardDetails">
+      <h1
+        data-testid="recipe-title"
+        className="cardDetailsTitle"
+      >
+        {receita.strMeal || receita.strDrink}
+
+      </h1>
       <img
         src={ receita.strMealThumb || receita.strDrinkThumb }
         alt={ receita.strMeal || receita.strDrink }
         data-testid="recipe-photo"
       />
-      <h1 data-testid="recipe-title">{receita.strMeal || receita.strDrink}</h1>
       {type === 'meals' ? (
-        <h1 data-testid="recipe-category">{receita.strCategory}</h1>
+        <h3 data-testid="recipe-category" className="tag">{receita.strCategory}</h3>
       ) : (
         <h1 data-testid="recipe-category">{receita.strAlcoholic}</h1>
       )}
-      <p data-testid="instructions">{receita.strInstructions}</p>
+      <p data-testid="instructions" className="description">{receita.strInstructions}</p>
       {pathname.includes('in-progress') ? (
-        <ul>
+        <ul className="test">
           {ingrediente().map((element, index) => (
-            <li key={ index }>
+            <li
+              key={ index }
+            >
               <label htmlFor={ element } data-testid={ `${index}-ingredient-step` }>
                 <input
                   type="checkbox"
                   id={ element }
                   value={ element }
                   onChange={ (event) => handleCheckbox(event, element) }
+                  className="checkboxinput"
                 />
                 {`${element.medida[index]} ${element.ingrediente}`}
               </label>
@@ -77,14 +87,19 @@ function CardDetail() {
         </ul>
       ) : (
         ingrediente().map((element, index) => (
-          <p key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
+          <p
+            key={ index }
+            data-testid={ `${index}-ingredient-name-and-measure` }
+            className="ingredientsandvalue"
+          >
+            <img src={ Marker } alt="" />
             {element.ingrediente}
-            {' '}
+            {' - '}
             {element.medida}
           </p>
         ))
       )}
-    </>
+    </div>
   );
 }
 

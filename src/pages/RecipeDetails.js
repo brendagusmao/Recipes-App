@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { apiDrinkId, apiMealId, apiDrink, apiMeal } from '../helper/fetchApi';
 import '../CSS/RecipeDetails.css';
+import Header from '../component/Header';
 import Buttons from '../component/Buttons';
 import CardDetail from '../component/CardDetail';
 
@@ -42,12 +43,14 @@ function RecipeDetails() {
 
   return (
     <>
+      <Header title=" Details" />
       <CardDetail />
       {type === 'meals' ? (
         <iframe
           data-testid="video"
           title="youtube video"
           src={ receita.strYoutube?.replace('watch?v=', 'embed/') }
+          className="cardVideo"
         />
       ) : null}
       <div className="carousel">
@@ -59,6 +62,7 @@ function RecipeDetails() {
           >
             <p
               data-testid={ `${index}-recommendation-title` }
+              className="recommendationtitle"
             >
               {element.strMeal || element.strDrink}
             </p>
