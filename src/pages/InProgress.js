@@ -4,6 +4,8 @@ import { apiDrinkId, apiMealId } from '../helper/fetchApi';
 import Buttons from '../component/Buttons';
 import CardDetail from '../component/CardDetail';
 import ReceitasContext from '../context/ReceitasContext';
+import '../CSS/RecipeDetails.css';
+import Header from '../component/Header';
 
 function InProgress() {
   const [receita, setReceita] = useState({});
@@ -75,6 +77,7 @@ function InProgress() {
 
   return (
     <>
+      <Header title=" In Progress" />
       <CardDetail />
       <Buttons />
       <button
@@ -82,6 +85,7 @@ function InProgress() {
         data-testid="finish-recipe-btn"
         disabled={ usado.length !== ingrediente().length }
         onClick={ handleClick }
+        className="buttonfim"
       >
         Finish Recipe
       </button>
