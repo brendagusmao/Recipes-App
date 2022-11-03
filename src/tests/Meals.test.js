@@ -3,7 +3,6 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from '../helper/renderWithRouter';
-import meals from './mocks/meals';
 
 describe('Testando pagina de meals ~ refeições', () => {
   afterEach(() => jest.clearAllMocks());
