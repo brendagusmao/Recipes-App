@@ -1,11 +1,13 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from '../helper/renderWithRouter';
-import mockSoup from './helpers/mockMeals';
+import meals from './mocks/meals';
 
 describe('Testando pagina de meals ~ refeições', () => {
+  afterEach(() => jest.clearAllMocks());
+
   it('Deveria renderizar a página como esperado', async () => {
     renderWithRouter(<App />, '/meals');
 
@@ -38,6 +40,7 @@ describe('Testando pagina de meals ~ refeições', () => {
     expect(searchButton).toBeInTheDocument();
 
     userEvent.click(buscar);
+    userEvent.click(allBtn);
 
     expect(searchInput).not.toBeInTheDocument();
     expect(ingredientRadio).not.toBeInTheDocument();
@@ -63,13 +66,15 @@ describe('Testando pagina de meals ~ refeições', () => {
     expect(global.alert()).toBe(stringAlert);
   });
 
-  it('Deveria mostrar sopas caso pesquiser por soup com o nome selecionado', async () => {
+  it('Deveria mostrar sopas caso pesquisar por soup com o nome selecionado', async () => {
     const stringAlert = 'Sorry, we havent found any recipes for these filters.';
     global.alert = jest.fn()
       .mockReturnValue(stringAlert);
-    global.fetch = jest.fn().mockReturnValue({
-      json: jest.fn().mockReturnValue(mockSoup),
-    });
+    // global.fetch = jest.fn(() => Promise.resolve({
+    //   json: () => Promise.resolve(meals),
+    // }));
+
+    // expect(global.fetch).toHaveBeenCalledWith('https://www.themealdb.com/api/json/v1/1/search.php?s=');
 
     renderWithRouter(<App />, '/meals');
 
@@ -90,16 +95,27 @@ describe('Testando pagina de meals ~ refeições', () => {
 
     expect(global.alert).toHaveBeenCalledTimes(1);
     expect(global.alert()).toBe(stringAlert);
-    // const soup = screen.getByRole('img', { name: /leblebi soup/i });
 
-    // // await waitFor(() => expect(soup).toBeInTheDocument());
+    userEvent.click(buscar);
+
+    await waitFor(() => {
+      const soup = screen.getByText(/leblebi soup/i);
+      expect(soup).toBeInTheDocument();
+    });
   });
 
-  it('Deveria redirecionar a pagina de drinks quando clicado no botão', () => {
+  it('Deveria redirecionar a pagina de drinks quando clicado no botão', async () => {
+    // arrumar quando esteja na plagina meals
     const { history } = renderWithRouter(<App />, '/drinks');
 
-    const drinkLink = screen.getByRole('img', { name: /drink icon/i });
+    const drinkLink = screen.getByRole('link', { name: /drink icon/i });
+
     userEvent.click(drinkLink);
+
+    // await waitForElementToBeRemoved(() => screen.findByRole('heading', { name: /meals/i }));
+
+    const drinksHeader = await screen.findByRole('heading', { name: /drinks/i });
+    expect(drinksHeader).toBeInTheDocument();
 
     const { pathname } = history.location;
     expect(pathname).toBe('/drinks');
