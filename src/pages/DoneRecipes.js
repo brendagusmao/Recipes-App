@@ -4,6 +4,8 @@ import copy from 'clipboard-copy';
 import Header from '../component/Header';
 import shareIcon from '../images/shareIcon.svg';
 
+import '../CSS/RecipeDetails.css';
+
 function DoneRecipes() {
   const [done, setDone] = useState([]);
   const [copiado, setCopiado] = useState(false);
@@ -49,21 +51,33 @@ function DoneRecipes() {
         ? done
           .filter((e) => e.type.includes(filter))
           .map((element, index) => (
-            <div key={ index }>
-              <p data-testid={ `${index}-horizontal-top-text` }>
+            <div key={ index } className="cardDetails">
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="cardDetailsTitle"
+              >
                 {element.type}
               </p>
-              <p data-testid={ `${index}-horizontal-top-text` }>
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="subtitle"
+              >
                 {element.nationality}
                 {' '}
                 -
                 {' '}
                 {element.category}
               </p>
-              <p data-testid={ `${index}-horizontal-done-date` }>
+              <p
+                data-testid={ `${index}-horizontal-done-date` }
+                className="subtitle"
+              >
                 {element.doneDate}
               </p>
-              <p data-testid={ `${index}-horizontal-top-text` }>
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="subtitle"
+              >
                 {element.alcoholicOrNot}
               </p>
               <Link to={ `/${element.type}s/${element.id}` }>

@@ -1,21 +1,36 @@
 .footer {
-  background-color: #0c111a;
-  border-top: 5px solid  #0c111a;
+  backdrop-filter: blur(4px);
+  background-color: #0c111adf;
   bottom: 0;
   display: flex;
   justify-content: space-between;
   position: fixed;
-  width: 100%; }
+  width: 99%; }
+
+.footer a {
+  background-color: rgb(163, 77, 56);
+  border-radius: 5px;
+  font-family: Poppins , sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 5px;
+  padding: 15px;
+  text-transform: uppercase;
+  width: auto;
+}
 
 .footer img {
-  background-color: rgb(163, 77, 56);
-  border-radius: 30%;
-  margin: 10px;
-  padding: 10px;
-  width: 55px;
-}
+  margin: 5px;
+  width: 25px;}
 
 .teste {
   filter: invert(1);
 }
 
+@media screen and ( max-width : 600px ) {
+
+  .footer {
+    max-width: 99%;
+  }
+}

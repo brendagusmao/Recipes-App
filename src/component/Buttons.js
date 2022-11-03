@@ -88,23 +88,28 @@ function Buttons() {
       {/* <button type="button">
     Finish Recipe
   </button> */}
-      <button data-testid="share-btn" type="button" onClick={ copia }>
-        <img src={ shareIcon } alt="share icon" />
-        Share
-      </button>
-      {copiado && <p>Link copied!</p>}
-      <button type="button" onClick={ favoriteButton }>
-        <img
-          data-testid="favorite-btn"
-          src={
-            favorite.some((e) => e.id === receita[`id${site}`])
-              ? blackHeart
-              : whiteHeart
-          }
-          alt="imagem do favorito"
-        />
-        Favorite
-      </button>
+      <div className="cardboxbuttons">
+        <button
+          data-testid="share-btn"
+          type="button"
+          onClick={ copia }
+          className="buttonteste"
+        >
+          <img src={ shareIcon } alt="share icon" />
+        </button>
+        {copiado && <p className="cardspan">Link copied!</p>}
+        <button type="button" onClick={ favoriteButton }>
+          <img
+            data-testid="favorite-btn"
+            src={
+              favorite.some((e) => e.id === receita[`id${site}`])
+                ? blackHeart
+                : whiteHeart
+            }
+            alt="imagem do favorito"
+          />
+        </button>
+      </div>
     </div>
   );
 }

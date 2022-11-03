@@ -19,7 +19,7 @@ function Recipes() {
         />
       </label>
       <label htmlFor="ingrediente">
-        Ingrediente:
+        Ingredient:
         <input
           type="radio"
           name="ingrediente"

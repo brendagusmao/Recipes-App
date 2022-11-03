@@ -7,25 +7,201 @@
 }
 
 .recomendation-card {
-  background-color: none;
+  background-color: rgba(4, 4, 4, 0.442);
   border-radius: 5px;
   color: white;
   display: flex;
   flex-direction: column;
   height: fit-content;
   letter-spacing: 1px;
-  margin: 0 4% 4% 1%;
+  margin: 0 3% 3% 1%;
   min-width: 46%;
   padding: 3px;
   position: relative;
+  text-align: center;
   top: 0;
 }
 
-/* brenda eu comentei pq não passava no cy quando for mexer nisso
-  passa no cy e veja se passa na questao 28 pois eh la que fica o css do cy */
+.recomendation-card img {
+  border-radius: 5px;
+}
 
-/* .inicialbutton {
+.recommendationtitle {
+  font-family: PP Neue Montreal , serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding-top: 5px;
+}
+
+.cardDetails {
+  background-color: rgba(4, 4, 4, 0.442);
+  border-radius: 25px 25px 5px 5px;
+  color: white;
+  margin-left: 5px;
+  margin-top: 15px;
+  width: 97%;
+}
+
+.cardDetails img {
+  margin: 5px;
+  margin-top: -10px;
+  width: 97%;
+}
+
+.ingredientsandvalue img {
+  color: white;
+  margin-top: 4px;
+  width: 20px;
+}
+
+.cardboxbuttons img {
+  background-color: rgba(4, 4, 4, 0.587);
+  border: 2px solid rgba(4, 4, 4, 0.442);
+  border-radius: 40%;
+  box-shadow: 1px 1px 2px black;
+  padding: 10px;
+  width: 50px;
+}
+
+.cardDetails img:hover {
+  filter: grayscale(80%);
+}
+
+.cardDetailsTitle {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  font-family: PP Neue Montreal , serif;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 1px;
+  padding: 15px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.description {
+  border-top: 0.5px solid rgba(4, 4, 4, 0.509);
+  font-family: PP Neue Montreal , serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 15px;
+  text-align: justify;
+  width: 100%;
+}
+
+.ingredientsandvalue, li {
+  border-top: 0.5px solid #beb1942b;
+  font-family: Quicksand , sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-left: 10px;
+  padding-top: 10px;
+  text-align: justify;
+  text-transform: uppercase;
+  width: 96%;
+}
+
+.tag {
+  border-top: 0.5px solid rgba(4, 4, 4, 0.509);
+  color: #beb194;
+  font-family: Playfair Display , serif;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Playfair+Display:ital,wght@0,500;1,600&display=swap') ;
+
+.inicialbutton {
+  align-items: center;
+  background-color: #325732;
+  border: 1px solid #264a26;
+  border-radius: 15px;
+  bottom: 10px;
+  box-shadow: 1px 1px 2px black;
+  color: white;
+  display: flex;
+  font-family: Quicksand , sans-serif;
+  font-weight: 900;
+  justify-content: center;
+  margin-left: 100px;
+  padding: 15px;
   position: fixed;
-  width: 0px;
-  bottom: 0px
-} */
+  text-shadow: 1px 1px 1px #325832;
+}
+
+.buttonteste {
+  top: -130px;
+}
+
+.cardVideo {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 97%;
+}
+
+.cardboxbuttons {
+  bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+
+.cardspan {
+  font-family: PP Neue Montreal , serif;
+  font-size: 12px;
+  letter-spacing: 1;
+  margin-left: -250px;
+  margin-top: -30px;
+}
+
+li {
+  margin-left: -10px;
+}
+
+li::marker {
+  color: transparent;
+}
+
+.checkboxinput {
+  accent-color: #498149;
+  margin-right: 15px;
+}
+
+.buttonfim {
+  background-color: rgb(168, 54, 25);
+  border: none;
+  border-radius: 15px;
+  bottom: 15px;
+  color: white;
+  cursor: pointer;
+  font-family: Quicksand , sans-serif;
+  font-size: 13px;
+  height: 40px;
+  letter-spacing: 1px;
+  margin-left: 105px;
+  margin-top: 1rem;
+  outline: none;
+  position: fixed;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  width: auto;
+  z-index: 9;
+}
+
+.subtitle {
+  font-family: Poppins , sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin-left: 5px;
+}
