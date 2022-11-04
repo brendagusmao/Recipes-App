@@ -20,6 +20,9 @@
   width: auto;
 }
 
+.footer a:hover {
+  color: white;
+}
 .footer img {
   margin: 5px;
   width: 25px;}
