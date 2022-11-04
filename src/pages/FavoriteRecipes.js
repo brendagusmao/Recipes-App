@@ -37,7 +37,7 @@ function FavoriteRecipes() {
   return (
     <>
       <Header title="Favorite Recipes" />
-      <div>
+      <div className="menu2">
         <button
           type="button"
           data-testid="filter-by-all-btn"
@@ -66,45 +66,61 @@ function FavoriteRecipes() {
       {favorita
         ?.filter((e) => e.type.includes(filter))
         .map((element, index) => (
-          <div key="index">
+          <div key="index" className="cardDetails">
             <Link to={ `/${element.type}s/${element.id}` }>
               <img
                 src={ element.image }
                 alt="Imagem da receita"
                 data-testid={ `${index}-horizontal-image` }
-                width="300px"
               />
-              <p data-testid={ `${index}-horizontal-name` }>{element.name}</p>
+              <p
+                data-testid={ `${index}-horizontal-name` }
+                className="cardDetailsTitle"
+              >
+                {element.name}
+
+              </p>
             </Link>
 
-            <p data-testid={ `${index}-horizontal-top-text` }>{element.type}</p>
+            <p
+              data-testid={ `${index}-horizontal-top-text` }
+              className="cardtitlee"
+            >
+              {element.type}
 
-            <p data-testid={ `${index}-horizontal-top-text` }>
+            </p>
+
+            <p
+              data-testid={ `${index}-horizontal-top-text` }
+              className="cardtitlee"
+            >
               {element.type === 'meal'
                 ? `${element.nationality} - ${element.category}`
                 : `${element.alcoholicOrNot}`}
             </p>
-            <button
-              type="button"
-              onClick={ () => handleFavorite(element.id) }
-            >
-              <img
-                data-testid={ `${index}-horizontal-favorite-btn` }
-                src={ blackHeart }
-                alt="ícone de favoritar"
-              />
-            </button>
-            <button
-              type="button"
-              onClick={ () => copy(`${url}/${element.type}s/${element.id}`)
+            <div className="bottomshare">
+              <button
+                type="button"
+                onClick={ () => handleFavorite(element.id) }
+              >
+                <img
+                  data-testid={ `${index}-horizontal-favorite-btn` }
+                  src={ blackHeart }
+                  alt="ícone de favoritar"
+                />
+              </button>
+              <button
+                type="button"
+                onClick={ () => copy(`${url}/${element.type}s/${element.id}`)
                 && setCopiado(true) }
-            >
-              <img
-                src={ shareIcon }
-                alt="share"
-                data-testid={ `${index}-horizontal-share-btn` }
-              />
-            </button>
+              >
+                <img
+                  src={ shareIcon }
+                  alt="share"
+                  data-testid={ `${index}-horizontal-share-btn` }
+                />
+              </button>
+            </div>
             {copiado ? <p>Link copied!</p> : null}
           </div>
         ))}

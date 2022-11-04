@@ -21,7 +21,7 @@ function DoneRecipes() {
   return (
     <div>
       <Header title="Done Recipes" />
-      <div>
+      <div className="menu2">
         <button
           type="button"
           data-testid="filter-by-all-btn"
@@ -85,9 +85,14 @@ function DoneRecipes() {
                   src={ element.image }
                   alt={ element.name }
                   data-testid={ `${index}-horizontal-image` }
-                  width="300px"
                 />
-                <p data-testid={ `${index}-horizontal-name` }>{element.name}</p>
+                <p
+                  data-testid={ `${index}-horizontal-name` }
+                  className="cardtitlee"
+                >
+                  {element.name}
+
+                </p>
               </Link>
               <button
                 type="button"
@@ -98,13 +103,20 @@ function DoneRecipes() {
                   src={ shareIcon }
                   alt="share"
                   data-testid={ `${index}-horizontal-share-btn` }
+                  style={ { width: '30px' } }
                 />
               </button>
               {copiado ? <p>Link copied!</p> : null}
-              <p data-testid={ `${index}-${element.tags[0]}-horizontal-tag` }>
+              <p
+                data-testid={ `${index}-${element.tags[0]}-horizontal-tag` }
+                className="cardtitlee"
+              >
                 {element.tags[0]}
               </p>
-              <p data-testid={ `${index}-${element.tags[1]}-horizontal-tag` }>
+              <p
+                data-testid={ `${index}-${element.tags[1]}-horizontal-tag` }
+                className="cardtitlee"
+              >
                 {element.tags[1]}
               </p>
             </div>

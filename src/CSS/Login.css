@@ -126,6 +126,24 @@ h4 {
   text-transform: uppercase;
 }
 
+@media screen and ( max-width : 420px ) {
+  .Header {
+    background-color: #beb194;
+    border-radius: 30% 20% 0% 80% / 50% 0% 100% 50%;
+    color: white;
+    height: 160px;
+    margin-top: -550px;
+    position: absolute;
+    width: 100%;
+  }
+  .Login__container {
+    border-radius: 30% 30% 0% 0% / 10% 0% 0% 0%;
+    height: 20vh;
+    margin-bottom: 1px;
+    overflow: hidden;
+    width: 90vw;
+  }
+}
 @media screen and ( max-width : 600px ) {
 
   .Login__container {
