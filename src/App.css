@@ -13,6 +13,9 @@
   src: url('./images/fontes/NeueMontreal-Regular.otf');
 }
 
+a {
+  text-decoration: none;
+}
 body {
   font-family: PP Neue Montreal , serif;
 }

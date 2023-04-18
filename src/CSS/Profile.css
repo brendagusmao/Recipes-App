@@ -1,19 +1,31 @@
 .main {
-  background-color: #0c111a;
-  color: white;
+  margin-top: 30px;
+  color: var(--cor-02);
   font-family: PP Neue Montreal , serif;
   letter-spacing: 1px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
-a {
-  color: white;
+.main a {
+  color: var(--cor-02);
   outline: none;
   text-decoration: none;
+  margin: 5px;
+  font-weight: 700;
 }
 
 .buttomlogo {
-  background-color: black;
+  background-color: var(--cor-01);
+  color: var(--cor-02);
   border-radius: 5px;
   margin: 5px;
   padding: 15px;
+  font-weight: 700;
+  outline: none;
+  border: none;
 }
