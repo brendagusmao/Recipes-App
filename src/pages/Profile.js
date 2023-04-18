@@ -10,9 +10,13 @@ function Profile() {
   return (
     <div className="containerrecipes">
       <Header title="Profile" />
-      <Footer />
       <div className="cardDetails">
         <section className="main">
+          <p />
+          <p />
+        <Footer />
+        <p />
+          <p />
           <p data-testid="profile-email">
             Email:
             {' '}
