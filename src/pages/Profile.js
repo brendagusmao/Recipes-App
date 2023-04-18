@@ -14,8 +14,8 @@ function Profile() {
         <section className="main">
           <p />
           <p />
-        <Footer />
-        <p />
+          <Footer />
+          <p />
           <p />
           <p data-testid="profile-email">
             Email:
