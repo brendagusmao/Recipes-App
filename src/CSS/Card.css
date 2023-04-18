@@ -130,7 +130,9 @@
     }
     .maincard {
       width: 100%;
+      height: 700px;
       overflow-y: none;
+      border-radius: 0px;
     }
     .gridcard {
       display: grid;

@@ -148,47 +148,26 @@ h4 {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 420px) {
-  .Header {
-    background-color: #beb194;
-    border-radius: 30% 20% 0% 80% / 50% 0% 100% 50%;
-    color: white;
-    height: 160px;
-    margin-top: -550px;
-    position: absolute;
+@media screen and (max-width: 780px) {
+  .Login-container {
     width: 100%;
+    height: 645px;
+    margin-top: 0px;
+    margin-left: 0px;
   }
-  .Login__container {
-    border-radius: 30% 30% 0% 0% / 10% 0% 0% 0%;
-    height: 20vh;
-    margin-bottom: 1px;
-    overflow: hidden;
-    width: 90vw;
+  .boxsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
 }
-@media screen and (max-width: 600px) {
-  .Login__container {
-    border-radius: 30% 30% 0% 0% / 10% 0% 0% 0%;
-    height: 80vh;
-    margin-bottom: 1px;
-    overflow: hidden;
-    width: 90vw;
+@media screen and (max-width: 414px) {
+  .Login-container {
+    width: 100%;
+    height: 895px;
+    margin-top: 0px;
+    margin-left: 0px;
   }
 
-  .Login__container:hover {
-    transform: none;
-  }
-
-  .Login__form-input {
-    backdrop-filter: none;
-  }
-
-  .Header img {
-    background-color: #a3977e;
-    border-radius: 40%;
-    margin-left: 105px;
-    margin-top: 10%;
-    padding: 15px;
-    width: 35%;
-  }
 }
