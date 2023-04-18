@@ -128,6 +128,19 @@
         verflow-x: none;  */
      height: 896px!important;
     }
+    .maincard {
+      width: 100%;
+      overflow-y: none;
+    }
+    .gridcard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: minmax(140px, auto);
+      row-gap: 30px;
+    }
+    .menu {
+      margin-top: 60px;
+    }
   }
   
   @media screen and ( max-width : 412px ) {
