@@ -8,6 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none!important;
+}
 .Login {
   align-content: center;
   align-items: left;
@@ -45,7 +48,7 @@ body {
   background: #6d898e;
   color: white;
 }
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Darker+Grotesque:wght@700&family=Lobster&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat+Subrayada&family=Montserrat:wght@400;500;600;800&family=Mulish:wght@400;500;600;800&family=Nanum+Myeongjo:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Poppins:wght@400;700;800;900&family=Quicksand:wght@500;600;700&family=Tilt+Warp&family=Work+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap') ;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Darker+Grotesque:wght@700&family=Lobster&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat+Subrayada&family=Montserrat:wght@400;500;600;800&family=Mulish:wght@400;500;600;800&family=Nanum+Myeongjo:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Poppins:wght@400;700;800;900&family=Quicksand:wght@500;600;700&family=Tilt+Warp&family=Work+Sans:wght@700&family=Yanone+Kaffeesatz&display=swap");
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
