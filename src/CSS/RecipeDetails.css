@@ -7,11 +7,13 @@
 }
 
 .recomendation-card {
-  background-color: rgba(4, 4, 4, 0.442);
+  background-color: #f3f3f3;
+  border: 1px solid #eee;
   border-radius: 5px;
-  color: white;
+  color: var(--cor-02);
   display: flex;
   flex-direction: column;
+  height: -moz-fit-content;
   height: fit-content;
   letter-spacing: 1px;
   margin: 0 3% 3% 1%;
@@ -20,35 +22,50 @@
   position: relative;
   text-align: center;
   top: 0;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .recomendation-card img {
+  border-top: 1px solid #eee;
   border-radius: 5px;
 }
 
+.recomendation-card a {
+  color: var(--cor-02);
+}
 .recommendationtitle {
-  font-family: PP Neue Montreal , serif;
-  font-size: 14px;
+  color: var(--cor-02);
+  font-family: PP Neue Montreal, serif;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 1px;
-  padding-top: 5px;
+  padding-top: 5;
 }
 
 .cardDetails {
-  background-color: rgba(4, 4, 4, 0.442);
-  border-radius: 25px 25px 5px 5px;
-  color: white;
-  margin-left: 5px;
-  margin-top: 15px;
+  background-color: transparent;
+  border-radius: 0px 0px 30px 30px;
+  color: var(--cor-02);
+  margin-left: 0px;
+  margin-top: 1px;
   width: 97%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 480px;
 }
 
 .cardDetails img {
   margin: 5px;
-  margin-top: -10px;
+  margin-top: 0px;
   width: 97%;
 }
 
+.bg {
+  background-color: #eee;
+  color: var(--cor-02);
+}
 .ingredientsandvalue img {
   color: white;
   margin-top: 4px;
@@ -56,36 +73,49 @@
 }
 
 .cardboxbuttons img {
-  background-color: rgba(4, 4, 4, 0.587);
-  border: 2px solid rgba(4, 4, 4, 0.442);
   border-radius: 40%;
-  box-shadow: 1px 1px 2px black;
   padding: 10px;
   width: 50px;
 }
 
+.cardboxbuttons button {
+  border: none;
+  outline: none;
+  text-shadow: none;
+  padding: 10px;
+}
+.share {
+  margin-left: 40px;
+  color: var(--cor-02);
+  background-color: transparent;
+}
+.fav {
+  color: var(--cor-02);
+  background-color: transparent;
+}
 .cardDetails img:hover {
   filter: grayscale(80%);
 }
 
 .cardDetailsTitle {
   align-items: center;
-  color: white;
+  color: var(--cor-02);
   display: flex;
   flex-flow: row;
-  font-family: PP Neue Montreal , serif;
-  font-size: 18px;
+  font-family: Quicksand, sans-serif;
+  font-size: 19px;
   font-weight: 700;
   justify-content: center;
-  letter-spacing: 1px;
-  padding: 15px;
-  text-transform: uppercase;
+  letter-spacing: 0em;
+  padding: 10px;
   width: 100%;
+  text-transform: capitalize;
+  border-bottom: 0.5px solid #eee;
 }
 
 .description {
-  border-top: 0.5px solid rgba(4, 4, 4, 0.509);
-  font-family: PP Neue Montreal , serif;
+  border-top: 0.5px solid #eee;
+  font-family: PP Neue Montreal, serif;
   font-size: 14px;
   letter-spacing: 1px;
   padding: 15px;
@@ -93,10 +123,11 @@
   width: 100%;
 }
 
-.ingredientsandvalue, li {
+.ingredientsandvalue,
+li {
   border-top: 0.5px solid #beb1942b;
-  font-family: Quicksand , sans-serif;
-  font-size: 13px;
+  font-family: Quicksand, sans-serif;
+  font-size: 12px;
   letter-spacing: 1px;
   margin-left: 10px;
   padding-top: 10px;
@@ -106,11 +137,11 @@
 }
 
 .tag {
-  border-top: 0.5px solid rgba(4, 4, 4, 0.509);
-  color: #beb194;
-  font-family: Playfair Display , serif;
-  font-size: 18px;
-  font-style: italic;
+  border-top: 0.5px solid #eee;
+  color: #eb7551;
+  text-shadow: 0px 0px 1px #9c9c9c;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
   letter-spacing: 1px;
   margin-top: 15px;
   padding-top: 15px;
@@ -118,21 +149,14 @@
 }
 
 .inicialbutton {
-  align-items: center;
   background-color: #325732;
   border: 1px solid #264a26;
-  border-radius: 15px;
-  bottom: 0px;
-  box-shadow: 1px 1px 2px black;
+  margin-left: 10px;
+  border-radius: 5px;
   color: white;
-  display: flex;
-  font-family: Quicksand , sans-serif;
+  font-family: Quicksand, sans-serif;
+  font-size: 15px;
   font-weight: 900;
-  justify-content: center;
-  margin-left: 100px;
-  padding: 15px;
-  position: fixed;
-  text-shadow: 1px 1px 1px #325832;
 }
 
 .buttonteste {
@@ -147,6 +171,7 @@
 
 .cardboxbuttons {
   bottom: 10px;
+  font-size: 18px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -154,13 +179,11 @@
   width: 100%;
 }
 
-
 .cardspan {
-  font-family: PP Neue Montreal , serif;
+  font-family: PP Neue Montreal, serif;
   font-size: 12px;
   letter-spacing: 1;
-  margin-left: -250px;
-  margin-top: -30px;
+  margin-top: 15px;
 }
 
 li {
@@ -176,30 +199,30 @@ li::marker {
   margin-right: 15px;
 }
 
-.buttonfim {
-  background-color: rgb(168, 54, 25);
+.buttonfim button {
+  background-color: var(--cor-05);
   border: none;
   border-radius: 15px;
   bottom: 15px;
   color: white;
-  cursor: pointer;
-  font-family: Quicksand , sans-serif;
+  font-family: Quicksand, sans-serif;
+  font-weight: 900;
   font-size: 13px;
   height: 40px;
   letter-spacing: 1px;
-  margin-left: 105px;
-  margin-top: 1rem;
   outline: none;
-  position: fixed;
   text-shadow: none;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   width: auto;
-  z-index: 9;
 }
 
+.buttonfim button:disabled {
+  background-color: var(--cor-04);
+  color: rgba(255, 255, 255, 0.424);
+}
 .subtitle {
-  font-family: Poppins , sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   letter-spacing: 0.3px;
   margin-left: 5px;
@@ -207,10 +230,10 @@ li::marker {
 
 .cardtitlee {
   align-items: center;
-  color: white;
+  color: var(--cor-02);
   display: flex;
   flex-flow: row;
-  font-family: PP Neue Montreal , serif;
+  font-family: PP Neue Montreal, serif;
   font-size: 13px;
   font-weight: 700;
   justify-content: center;
@@ -226,19 +249,71 @@ li::marker {
   flex-flow: row;
   justify-content: center;
   width: 100%;
-  border-top: 0.5px solid rgba(4, 4, 4, 0.509);
-  padding: 15px
+  border-top: 0.5px solid #eee;
+  padding: 15px;
+}
+.bottomshare button {
+  background-color: white;
+  outline: none;
+  border: none;
+}
+.doneShare button{
+  background-color: var(--cor-05);
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+.menu2 {
+  align-items: center;
+  display: flex;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  justify-content: center;
+  margin-left: 1px;
+  margin-top: 6px;
+  max-width: 90%;
+  text-transform: uppercase;
+}
+.menu2 button {
+  background-color: var(--cor-05);
+  color: var(--cor-06);
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  justify-content: center;
+  border: none;
+  margin: 5px;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 10px;
+  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.05));
+  outline: none;
+}
+.backbutton,
+.buttonfim {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.backbutton button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 15px;
+  font-family: Quicksand, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.menu2 {
-    align-items: center;
-    display: flex;
-    font-family: Poppins , sans-serif;
-    font-size: 14px;
-    justify-content: center;
-    margin-left: 1px;
-    margin-top: 6px;
-    max-width: 90%;
-    text-transform: uppercase;
+@media screen and (max-width: 780px) {
+  .cardDetails {
+    overflow-y: none;
+    overflow-x: none;
+    height: none;
+  }
+  .menu2 {
+    margin-top: 56px;
+  }
 }
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Playfair+Display:ital,wght@0,500;1,600&display=swap') ;

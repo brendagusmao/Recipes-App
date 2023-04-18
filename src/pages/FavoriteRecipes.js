@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { TiHeartFullOutline } from 'react-icons/ti';
+import { FaShareSquare } from 'react-icons/fa';
 import copy from 'clipboard-copy';
 import Header from '../component/Header';
-import blackHeart from '../images/blackHeartIcon.svg';
-import shareIcon from '../images/shareIcon.svg';
+// import blackHeart from '../images/blackHeartIcon.svg';
 
 function FavoriteRecipes() {
   const [filter, setFilter] = useState('');
@@ -35,7 +36,7 @@ function FavoriteRecipes() {
   const url = window.location.href.replace(pathname, '');
 
   return (
-    <>
+    <div className="containerrecipes">
       <Header title="Favorite Recipes" />
       <div className="menu2">
         <button
@@ -63,68 +64,67 @@ function FavoriteRecipes() {
           Drinks
         </button>
       </div>
-      {favorita
-        ?.filter((e) => e.type.includes(filter))
-        .map((element, index) => (
-          <div key="index" className="cardDetails">
-            <Link to={ `/${element.type}s/${element.id}` }>
-              <img
-                src={ element.image }
-                alt="Imagem da receita"
-                data-testid={ `${index}-horizontal-image` }
-              />
-              <p
-                data-testid={ `${index}-horizontal-name` }
-                className="cardDetailsTitle"
-              >
-                {element.name}
+      <div className="cardDetails bg">
+        {favorita
+          ?.filter((e) => e.type.includes(filter))
+          .map((element, index) => (
+            <div key="index">
+              <Link to={ `/${element.type}s/${element.id}` }>
+                <img
+                  src={ element.image }
+                  alt="Imagem da receita"
+                  data-testid={ `${index}-horizontal-image` }
+                />
+                <p
+                  data-testid={ `${index}-horizontal-name` }
+                  className="cardDetailsTitle"
+                  style={ { color: 'var(--cor-02)' } }
+                >
+                  {element.name}
+                  {element.type}
+                </p>
+              </Link>
 
-              </p>
-            </Link>
-
-            <p
+              {/* <p
               data-testid={ `${index}-horizontal-top-text` }
               className="cardtitlee"
             >
               {element.type}
 
-            </p>
+            </p> */}
 
-            <p
-              data-testid={ `${index}-horizontal-top-text` }
-              className="cardtitlee"
-            >
-              {element.type === 'meal'
-                ? `${element.nationality} - ${element.category}`
-                : `${element.alcoholicOrNot}`}
-            </p>
-            <div className="bottomshare">
-              <button
-                type="button"
-                onClick={ () => handleFavorite(element.id) }
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="cardtitlee"
               >
-                <img
-                  data-testid={ `${index}-horizontal-favorite-btn` }
-                  src={ blackHeart }
-                  alt="ícone de favoritar"
-                />
-              </button>
-              <button
-                type="button"
-                onClick={ () => copy(`${url}/${element.type}s/${element.id}`)
+                {element.type === 'meal'
+                  ? `${element.nationality} - ${element.category}`
+                  : `${element.alcoholicOrNot}`}
+              </p>
+              <div className="bottomshare">
+                <button
+                  type="button"
+                  onClick={ () => handleFavorite(element.id) }
+                >
+                  <TiHeartFullOutline style={ { color: 'red' } } />
+                </button>
+                {copiado ? (
+                  <span className="cardspan">Link copiado!</span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={ () => copy(`${url}/${element.type}s/${element.id}`)
                 && setCopiado(true) }
-              >
-                <img
-                  src={ shareIcon }
-                  alt="share"
-                  data-testid={ `${index}-horizontal-share-btn` }
-                />
-              </button>
+                  >
+                    <FaShareSquare />
+                  </button>
+                )}
+              </div>
+              {/* {copiado ? <p>Link copied!</p> : null} */}
             </div>
-            {copiado ? <p>Link copied!</p> : null}
-          </div>
-        ))}
-    </>
+          ))}
+      </div>
+    </div>
   );
 }
 

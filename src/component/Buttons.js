@@ -1,12 +1,15 @@
+/* eslint-disable react/jsx-indent-props */
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { FaShareSquare } from 'react-icons/fa';
+import { TiHeartFullOutline } from 'react-icons/ti';
 import clipboardCopy from 'clipboard-copy';
-import ReceitasContext from '../context/ReceitasContext';
 import { apiDrinkId, apiMealId } from '../helper/fetchApi';
+import ReceitasContext from '../context/ReceitasContext';
 import '../CSS/RecipeDetails.css';
-import shareIcon from '../images/shareIcon.svg';
-import blackHeart from '../images/blackHeartIcon.svg';
-import whiteHeart from '../images/whiteHeartIcon.svg';
+// import shareIcon from '../images/shareIcon.svg';
+// import blackHeart from '../images/blackHeartIcon.svg';
+// import whiteHeart from '../images/whiteHeartIcon.svg';
 
 function Buttons() {
   const [receita, setReceita] = useState({});
@@ -68,13 +71,21 @@ function Buttons() {
     result();
   }, [id, type]);
 
-  const copia = () => {
-    clipboardCopy(window.location.href.replace('/in-progress', ''));
+  const INTERVAL = 2000;
+
+  const copia = (path) => {
+    const link = `http://localhost:3000/${path}`;
+    clipboardCopy(link);
     setCopiado(true);
+    setTimeout(() => {
+      setCopiado(false);
+    }, INTERVAL);
+    // clipboardCopy(window.location.href.replace('/in-progress', ''));
+    // setCopiado(true);
   };
 
   return (
-    <div>
+    <div className="cardboxbuttons">
       {done.every((e) => e.id !== id) && (
         <button
           data-testid="start-recipe-btn"
@@ -85,31 +96,26 @@ function Buttons() {
           {continua.length !== 0 ? 'Continue Recipe' : 'Start Recipe'}
         </button>
       )}
-      {/* <button type="button">
-    Finish Recipe
-  </button> */}
-      <div className="cardboxbuttons">
+      {copiado ? (
+        <span className="cardspan">Link copiado!</span>
+      ) : (
         <button
           data-testid="share-btn"
           type="button"
-          onClick={ copia }
-          className="buttonteste"
+          onClick={ () => copia(`${type}s/${id}`) }
+          className="share"
         >
-          <img src={ shareIcon } alt="share icon" />
+          <FaShareSquare />
         </button>
-        {copiado && <p className="cardspan">Link copied!</p>}
-        <button type="button" onClick={ favoriteButton }>
-          <img
-            data-testid="favorite-btn"
-            src={
-              favorite.some((e) => e.id === receita[`id${site}`])
-                ? blackHeart
-                : whiteHeart
-            }
-            alt="imagem do favorito"
-          />
-        </button>
-      </div>
+      )}
+
+      <button type="button" onClick={ favoriteButton } className="fav">
+        {favorite.some((e) => e.id === receita[`id${site}`]) ? (
+          <TiHeartFullOutline style={ { color: 'red' } } />
+        ) : (
+          <TiHeartFullOutline />
+        )}
+      </button>
     </div>
   );
 }

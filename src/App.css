@@ -1,10 +1,19 @@
+:root {
+  --cor-00:#f8ceb8;
+  --cor-01:rgb(237, 174, 126);
+  --cor-02:#3f3a3c;
+  --cor-03:#895a3f;
+  --cor-04:#a37a4c;
+  --cor-05:#fe9070;
+  --cor-06:#fdfcfb;
+}
+
 @font-face {
   font-family: PP Neue Montreal;
   src: url('./images/fontes/NeueMontreal-Regular.otf');
 }
 
 body {
-  background-color: black;
   font-family: PP Neue Montreal , serif;
 }
 

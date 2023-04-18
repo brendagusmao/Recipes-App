@@ -5,17 +5,23 @@ import ReceitasContext from '../context/ReceitasContext';
 import Card from '../component/Card';
 import Footer from '../component/Footer';
 import Recipes from './Recipes';
+import SearchRecipe from '../component/SearchRecipes';
+
+import '../CSS/Card.css';
 
 function Meals() {
   const { receitas, renderiza } = useContext(ReceitasContext);
   const path = window.location.pathname;
   const route = useHistory();
   return (
-    <div>
+    <div className="containerrecipes">
       <Header title="Meals" />
-      {receitas && receitas.length === 1
-        ? route.push(`/meals/${receitas[0].idMeal}`)
-        : receitas
+      <SearchRecipe />
+      <Footer />
+      <div className="maincard">
+        {receitas && receitas.length === 1
+          ? route.push(`/meals/${receitas[0].idMeal}`)
+          : receitas
           && receitas
             // .slice(0, +'12')
             .map((recipes, id) => (
@@ -35,8 +41,8 @@ function Meals() {
                 className="main"
               />
             ))}
-      { renderiza ? <Recipes /> : null }
-      <Footer />
+        { renderiza ? <Recipes /> : true }
+      </div>
     </div>
   );
 }

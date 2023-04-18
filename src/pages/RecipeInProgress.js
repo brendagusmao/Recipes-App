@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { MdFileDownloadDone } from 'react-icons/md';
+// import { IoMdArrowRoundBack } from 'react-icons/io';
 import { apiDrinkId, apiMealId } from '../helper/fetchApi';
-import Buttons from '../component/Buttons';
 import CardDetail from '../component/CardDetail';
 import ReceitasContext from '../context/ReceitasContext';
 import '../CSS/RecipeDetails.css';
@@ -38,10 +39,10 @@ function InProgress() {
       if (
         receita[`strIngredient${i}`] !== ''
       && receita[`strIngredient${i}`] !== null
-      && receita[`strIngredient${i}`] !== undefined
+      && receita[`strIngredient${i}`] !== null
       && receita[`strMeasure${i}`] !== ''
       && receita[`strMeasure${i}`] !== null
-      && receita[`strMeasure${i}`] !== undefined
+      && receita[`strMeasure${i}`] !== null
       ) {
         resultado.push({
           ingrediente: receita[`strIngredient${i}`],
@@ -76,20 +77,32 @@ function InProgress() {
   };
 
   return (
-    <>
+    <div className="containerrecipes">
       <Header title=" In Progress" />
-      <CardDetail />
-      <Buttons />
-      <button
-        type="button"
-        data-testid="finish-recipe-btn"
-        disabled={ usado.length !== ingrediente().length }
-        onClick={ handleClick }
-        className="buttonfim"
-      >
-        Finish Recipe
-      </button>
-    </>
+      <div className="cardDetails">
+        <CardDetail />
+        {/* <Buttons /> */}
+        <div className="buttonfim">
+          <button
+            type="button"
+            data-testid="finish-recipe-btn"
+            disabled={ usado.length !== ingrediente().length }
+            onClick={ handleClick }
+          >
+            <MdFileDownloadDone />
+            {' '}
+            Finish Recipe
+          </button>
+        </div>
+        {/* <div className="backbutton">
+          <button type="button">
+            <IoMdArrowRoundBack />
+            {' '}
+            back
+          </button>
+        </div> */}
+      </div>
+    </div>
   );
 }
 

@@ -1,19 +1,20 @@
 .inputlabel {
   backdrop-filter: blur(0);
-  background-color: rgba(41, 39, 47, 0.861);
+  background-color: var(--cor-06);
   border: none;
-  caret-color: #498149;
-  color: white;
+  caret-color: var(--cor-00);
+  color: var(--cor-02);
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
-  height: 2.5rem;
+  height: 1.9rem;
   letter-spacing: 0.5px;
   margin: 5px;
   outline: none;
   padding: 8px 10px;
   transition: all 0.3s ease 0s;
-  width: 16rem;
+  width: 70%;
+  filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.15));
 }
 
 label {
@@ -21,21 +22,42 @@ label {
   padding: 8px;
 }
 
+.icon {
+  background-color: var(--cor-05);
+  padding: 5px;
+  font-size: 30px;
+  color: var(--cor-06);
+}
+
+.filter {
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-size: 17px;
+}
+.filter h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: PP Neue Montreal , serif;
+}
+
 .inputradio {
-  accent-color: #498149;
+  accent-color: var(--cor-05);
   background-color: white;
-  margin: 5;
+  margin: 8;
+  padding: 5px;
   margin-left: 8px;
 }
 
-.buttonss {
-  background-color: rgb(168, 54, 25);
+.buttonss button{
+  background-color: var(--cor-05)!important;
   border: none;
   border-radius: 4px;
-  color: white;
+  color: var(--cor-06);
   cursor: pointer;
   font-family: Quicksand , sans-serif;
-  font-size: 13px;
+  font-size: 15px!important;
   height: 40px;
   letter-spacing: 1px;
   margin-top: 1rem;
@@ -44,17 +66,30 @@ label {
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   width: 100px;
+  font-weight: 700;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap') ;
 
 .sectionbar {
-  margin-left: 0;
+  width: 260px;
+  background-color: #ffffffa9;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  margin-left: -30px;
+  z-index: 1;
+  margin-top: 535px;
+  color: var(--cor-02);
+  height: 480px;
+  border-radius: 0 0 30px 30px;
 }
 
-@media screen and ( max-width : 600px ) {
 
+@media screen and ( max-width : 780px ) {
   .sectionbar {
-    margin-left: -70px;
+    width: 106%;
+    position: fixed;
+    margin-top: 760px;
+    margin-right: -20px;
+    height: 706px;
+    z-index: 9;
+    }
   }
-}

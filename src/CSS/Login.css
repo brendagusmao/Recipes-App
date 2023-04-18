@@ -1,13 +1,3 @@
-.Login {
-  align-items: center;
-  background: url('https://celes.club/uploads/posts/2022-08/1661219513_1-celes-club-p-tekstura-kukhni-instagram-1.jpg');
-  background-position: 20%;
-  background-size: cover;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-}
-
 .Login__logo {
   margin-bottom: 2rem;
   margin-top: 5rem;
@@ -19,30 +9,38 @@
   width: 100%;
 }
 
-.Login__container {
+.Login-container {
+  background-image: url(https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?cs=srgb&dl=pexels-ella-olsson-1640770.jpg&fm=jpg);
+  align-content: center;
   align-items: center;
-  backdrop-filter: blur(4px);
-  background-color: rgba(27, 25, 33, 0.586);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 25px;
+  border-radius: 0 0 30px 30px;
   display: flex;
   flex-direction: column;
-  font-family: PP Neue Montreal , serif;
-  height: 25rem;
+  height: 525px;
   justify-content: center;
-  position: absolute;
-  transition: 0.7s all ease;
-  width: 20rem;
+  margin-left: 2px;
+  margin-top: 75px;
+  width: 268px;
+  background-color: #faf3ee;
+  background-position: flex-start;
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.Login-container img {
+  width: 100px;
+  margin-top: 0px;
+}
+.boxsection {
+  margin-top: 10px;
 }
 
 .Login__form-input {
   backdrop-filter: blur(0);
-  background-color: rgba(41, 39, 47, 0.861);
+  background-color: rgb(226, 226, 226);
   border: none;
-  caret-color: #498149;
-  color: white;
+  caret-color: #faf3ee;
+  color: var(--cor-02);
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
@@ -52,21 +50,27 @@
   outline: none;
   padding: 8px 10px;
   transition: all 0.3s ease 0s;
-  width: 16rem;
+  width: 15rem;
 }
 
 .Login__form-input:focus {
-  background-color: #0c111a;
-  border: 1px solid rgb(168, 54, 25);
-  color: white;
+  background-color: rgb(208, 207, 207);
+  color: var(--cor-02);
+}
+
+.googlebutton {
+  display: inline-block;
+  border-radius: 5px;
+  margin: 20px 0px 20px 20px;
 }
 
 .Login__button {
-  background-color: rgb(168, 54, 25);
+  margin-left: 25%;
+  color: var(--cor-06);
+  background-color: var(--cor-05);
   border: none;
   border-radius: 4px;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.286);
-  color: white;
+  box-shadow: 1px 2px 2px rgba(179, 179, 179, 0.286);
   cursor: pointer;
   font-size: 14px;
   font-weight: 800;
@@ -77,12 +81,27 @@
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   width: 110px;
+  text-shadow: 1px 1px 1px #7c7c7c;
 }
 
 .Login__button:hover {
-  background-color: rgb(163, 61, 35);
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.401);
+  background-color: var(--cor-04);
   color: white;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #cecece;
+  background-color: #dcdcdc;
+  color: #4f4e4e;
+  text-shadow: none;
+}
+button:disabled:hover,
+button[disabled] {
+  border: 1px solid #cecece;
+  background-color: #dcdcdc;
+  color: #4f4e4e;
+  text-shadow: none;
 }
 
 .Header {
@@ -105,20 +124,23 @@
 }
 
 form {
+  align-content: center;
   align-items: center;
   display: flex;
+  border-radius: 15px 15px 30px 30px;
+  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.05));
   flex-direction: column;
-  font-family: PP Neue Montreal , serif;
-  height: 25rem;
+  height: 380px;
   justify-content: center;
-  margin-top: 100px;
-  position: absolute;
-  transition: 0.7s all ease;
-  width: 20rem;
+  margin-top: 137px;
+  padding: 6px;
+  width: 100%;
+  color: var(--cor-02);
+  background-color: #faf3ee;
 }
 
 h4 {
-  color: white;
+  color: var(--cor-02);
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 2.5px;
@@ -126,7 +148,7 @@ h4 {
   text-transform: uppercase;
 }
 
-@media screen and ( max-width : 420px ) {
+@media screen and (max-width: 420px) {
   .Header {
     background-color: #beb194;
     border-radius: 30% 20% 0% 80% / 50% 0% 100% 50%;
@@ -144,8 +166,7 @@ h4 {
     width: 90vw;
   }
 }
-@media screen and ( max-width : 600px ) {
-
+@media screen and (max-width: 600px) {
   .Login__container {
     border-radius: 30% 30% 0% 0% / 10% 0% 0% 0%;
     height: 80vh;

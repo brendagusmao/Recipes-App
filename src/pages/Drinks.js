@@ -12,11 +12,14 @@ function Drinks() {
   const { receitas } = useContext(ReceitasContext);
 
   return (
-    <div>
+    <div className="containerrecipes">
       <Header title="Drinks" />
-      {receitas && receitas.length === 1
-        ? route.push(`/drinks/${receitas[0].idDrink}`)
-        : receitas
+      <Footer />
+      <div className="maincard">
+        <Recipes />
+        {receitas && receitas.length === 1
+          ? route.push(`/drinks/${receitas[0].idDrink}`)
+          : receitas
           && receitas
             .slice(0, +'12')
             .map((recipes, id) => (
@@ -35,8 +38,7 @@ function Drinks() {
                 nameTest={ `${id}-card-name` }
               />
             ))}
-      <Recipes />
-      <Footer />
+      </div>
     </div>
   );
 }

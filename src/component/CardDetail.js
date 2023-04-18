@@ -47,7 +47,7 @@ function CardDetail() {
   };
 
   return (
-    <div className="cardDetails">
+    <>
       <h1
         data-testid="recipe-title"
         className="cardDetailsTitle"
@@ -99,7 +99,7 @@ function CardDetail() {
           </p>
         ))
       )}
-    </div>
+    </>
   );
 }
 

@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-max-depth */
 import { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
 import ReceitasContext from '../context/ReceitasContext';
 import '../CSS/Login.css';
-import Logo from '../images/logo.png';
+import Logo from '../images/logocook.png';
 
 function Login() {
   const { userEmail, handleEmail, senha, handleSenha } = useContext(ReceitasContext);
@@ -16,13 +18,17 @@ function Login() {
     localStorage.setItem('user', JSON.stringify({ email: userEmail }));
     setRedirect(true);
   };
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+  const errorMessage = (error) => {
+    console.log(error);
+  };
   return (
-    <div className="Login">
-      <div className="Login__container">
-        <div className="Header">
-          <img src={ Logo } alt="avatar" />
-        </div>
-        <form>
+    <div className="Login-container">
+      <form>
+        <img src={ Logo } alt="" />
+        <section className="boxsection">
           <label htmlFor="email">
             <h4> Login</h4>
             <input
@@ -57,8 +63,15 @@ function Login() {
           >
             Entrar
           </button>
-        </form>
-      </div>
+          <div className="googlebutton">
+            <GoogleLogin
+              onSuccess={ responseMessage }
+              onError={ errorMessage }
+              style={ { margin: '10px, 10px' } }
+            />
+          </div>
+        </section>
+      </form>
       {redirect && <Redirect to="/meals" />}
     </div>
   );

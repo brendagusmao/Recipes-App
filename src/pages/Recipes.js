@@ -10,49 +10,11 @@ function Recipes() {
   const { receitas,
     meal,
     drink,
-    mealCategory,
-    drinkCategory,
-    mealClick,
-    drinkClick,
     filtro,
-    deleteAll,
   } = useContext(ReceitasContext);
 
   return (
-    <div className="main">
-      <div className="menu">
-        {window.location.pathname.includes('meals')
-      && mealCategory.map((element, index) => (
-        <button
-          data-testid={ `${element.strCategory}-category-filter` }
-          key={ index }
-          type="button"
-          value={ element.strCategory }
-          onClick={ (event) => mealClick(event.target.value) }
-        >
-          { element.strCategory }
-        </button>
-      ))}
-        {window.location.pathname.includes('drinks')
-      && drinkCategory.map((element, i) => (
-        <button
-          data-testid={ `${element.strCategory}-category-filter` }
-          key={ i }
-          type="button"
-          value={ element.strCategory }
-          onClick={ (event) => drinkClick(event.target.value) }
-        >
-          { element.strCategory }
-        </button>
-      ))}
-        <button
-          type="button"
-          onClick={ deleteAll }
-          data-testid="All-category-filter"
-        >
-          All
-        </button>
-      </div>
+    <div className="gridcard">
       {filtro && filtro.map((element, index) => (
         <Card
           key={ index }
