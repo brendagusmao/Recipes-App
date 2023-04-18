@@ -156,10 +156,15 @@ h4 {
     margin-left: 0px;
   }
   .boxsection {
+    align-content: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    width: 85%;
+    margin-left: 5px;
+  }
+  .Login__form-input{
+width: 100%;
   }
 }
 @media screen and (max-width: 414px) {
